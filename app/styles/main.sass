@@ -57,7 +57,8 @@ button[type='submit']
 .header
     display: flex
     position: fixed
-    width: 100%
+    width: gem(1200)
+    left: gem(120)
     top: 0
     padding-top: gem(28)
     z-index: 10
@@ -85,17 +86,17 @@ button[type='submit']
                         a
                             display: flex
                             align-items: center
-                            transition: 0.03s all ease
+                            transition: 0.3s all ease
                     li:first-child
                         margin-right: gem(36)
                     li:hover
                         a
-                            font-weight: 800
+                            // font-weight: 800
                             color: var(--color-white)
                     .access-main-text-buttons-element
                         margin-left: gem(65)
-                    .mobile-menu-button
-                        display: none
+.mobile-menu-button
+    display: none
 .opening
     margin-top: gem(91)
     &-main
@@ -141,12 +142,14 @@ button[type='submit']
                         width: gem(20)
                         height: gem(20)
                         z-index: 4
-                        transition: 0.3s all ease
+                        path
+                            transition: 0.3s all ease
                 &-element:hover
                     svg
-                        fill: var(--color-white)
                         path
                             stroke: var(--color-white)
+                            &:first-child
+                                fill: var(--color-white)
                         path:last-child
                             stroke: #43ADFF
 
@@ -280,7 +283,7 @@ button[type='submit']
             max-width: gem(568)
             margin-top: gem(79)
             p
-                margin-bottom: gem(20)
+                margin-bottom: gem(18)
             &-buttons
                 display: flex
                 flex-direction: column
@@ -291,7 +294,7 @@ button[type='submit']
                     background: linear-gradient(0deg, rgba(47,218,255,1) 0%, rgba(83,141,255,1) 45%, rgba(83,141,255,1) 65%, rgba(47,218,255,1) 100%)
                     border-radius: gem(20)
                     width: gem(147)
-                    height: gem(57)
+                    height: gem(64)
                     padding: gem(16.5) 0 gem(20.5) 0
                     background-position: 100% -20%
                     background-size: 100% 140%
@@ -299,6 +302,40 @@ button[type='submit']
                     cursor: pointer
                     &:hover
                         background-position: 100% 120%
+                &-form
+                    display: flex
+                    position: relative
+                    form
+                        display: flex
+                        flex-direction: column
+                        position: relative
+                        width: gem(480)
+                        input
+                            width: 100%
+                            height: gem(72)
+                            border-radius: gem(20)
+                            outline: none
+                            border: gem(1) solid #ADA3D2
+                            background: none
+                            padding: gem(26)
+                            font-family: var(--sub-font-alt)
+                            color: var(--color-white)
+                            font-size: gem(16)
+                            line-height: gem(20)
+                            &::placeholder
+                                font-family: var(--sub-font-alt)
+                                color: var(--color-white)
+                                font-size: gem(16)
+                                line-height: gem(20)
+                        input:hover
+                            &::placeholder
+                                opacity: 0.8
+                        a
+                            position: absolute
+                            top: gem(4)
+                            right: gem(4)
+                        svg
+                            display: none
 
         &-img
             width: gem(600)
@@ -384,12 +421,12 @@ button[type='submit']
                             a
                                 font-size: gem(13)
                                 line-height: gem(21)
+                                transition: 0.3s all ease
                         li:last-child
                             margin-bottom: 0
                         li:hover
                             a
-                                font-weight: 600
-                                transition: 0.03s all ease
+                                // font-weight: 600
                                 color: var(--color-white)
                     ul:last-child
                         margin-right: 0
@@ -406,6 +443,8 @@ button[type='submit']
     border-radius: gem(32)
     align-items: center
     background: #202039
+    margin: auto
+    z-index: 3000
     &-header
         display: flex
         margin-bottom: gem(46)
@@ -475,6 +514,8 @@ button[type='submit']
 @media all and (max-width: 1024px)
     .header
         padding-top: gem(14)
+        width: gem(704)
+        left: gem(32)
     .opening
         margin-top: gem(27)
         &-main
@@ -541,7 +582,7 @@ button[type='submit']
                         width: gem(478)
                         max-width: unset
     .access
-        margin-top: gem(116)
+        margin-top: gem(127)
         &-main
             width: 100%
             padding: 0 gem(32)
@@ -551,10 +592,13 @@ button[type='submit']
                 margin-top: 0
                 p
                     margin-bottom: gem(14)
+                .access-main-text-buttons-form
+                    form
+                        width: gem(417)
             &-img
                 width: gem(493)
                 right: gem(-212)
-                margin-top: gem(-67)
+                margin-top: gem(36)
                 height: auto
                 img:nth-child(1)
                     display: none
@@ -563,14 +607,14 @@ button[type='submit']
                 img:nth-child(3)
                     display: none
     .refer
-        padding: gem(117) 0 gem(113) 0
+        padding: gem(65) 0 gem(113) 0
         p
             margin-bottom: gem(16)
             max-width: gem(510)
         &-bgr
-            width: gem(958)
-            top: gem(119)
-            left: gem(-66)
+            width: gem(960)
+            top: gem(66)
+            left: gem(-73)
     .footer
         &-main
             &-info
@@ -591,10 +635,15 @@ button[type='submit']
 @media all and (max-width: 480px)
     .header
         padding-top: gem(18)
+        width: gem(337)
+        z-index: 20
+        left: gem(16)
         &-main
+            width: gem(337)
             &-logo
                 width: gem(140)
             &-menu
+                margin: 0
                 nav
                     ul
                         li
@@ -604,13 +653,16 @@ button[type='submit']
                             height: gem(32)
                             padding: gem(8) 0 gem(10) 0
                             margin-left: 0
-                            margin-right: gem(12)
                             border-radius: gem(12)
-                        .mobile-menu-button
-                            display: flex
-                            width: gem(32)
-                            height: gem(32)
-                            cursor: pointer
+    .mobile-menu-button
+        display: flex
+        width: gem(32)
+        height: gem(32)
+        cursor: pointer
+        position: fixed
+        top: gem(18)
+        right: gem(17)
+        z-index: 1000
     .opening
         margin-top: gem(27)
         &-main
@@ -619,8 +671,12 @@ button[type='submit']
                 margin-top: gem(-56)
                 width: gem(382)
             &-text
-                max-width: gem(344)
+                align-items: center
+                width: 100%
+                max-width: unset
                 margin-top: gem(-84)
+                h1, p
+                    max-width: gem(344)
                 p
                     margin: gem(14) 0 gem(34) 0
                     font-size: gem(13)
@@ -694,6 +750,7 @@ button[type='submit']
             &-text
                 max-width: unset
                 margin-top: gem(301)
+                z-index: 2
                 p.desc-1
                     margin-bottom: 0
                     font-size: gem(13)
@@ -701,11 +758,32 @@ button[type='submit']
                 .access-main-text-buttons
                     margin-top: gem(39)
                     p
-                        margin-bottom: gem(18)
+                        margin-bottom: gem(17)
                     &-element
                         span.label-2
                             font-size: gem(16)
                             line-height: gem(20)
+                .access-main-text-buttons-form
+                    form
+                        width: gem(318)
+                        height: gem(60)
+                        input
+                            height: unset
+                            padding: gem(20) gem(20) gem(20) gem(26)
+                        a
+                            width: gem(52)
+                            height: gem(52)
+                            top: gem(5)
+                            span
+                                display: none
+                            svg
+                                display: flex
+                                path
+                                    stroke: var(--color-white)
+                                    &:first-child
+                                        fill: var(--color-white)
+                                path:last-child
+                                    stroke: #43ADFF
             &-img
                 // width: gem(941)
                 position: absolute
@@ -715,6 +793,7 @@ button[type='submit']
                 top: 0
                 left: gem(-16)
                 margin: 0
+                z-index: 1
                 img
                     width: gem(956)
                     position: absolute
@@ -791,11 +870,23 @@ button[type='submit']
         height: 100vh
         justify-content: center
         align-items: center
-        position: fixed
-        top: 0
-        right: 100%
         background: #202039
-        z-index: 9
+        z-index: 2000
+        position: relative
+        &-header
+            display: flex
+            justify-content: space-between
+            position: absolute
+            top: 0
+            left: gem(16)
+            width: gem(337)
+            padding-top: gem(18)
+            .access-main-text-buttons-element
+                width: gem(101)
+                height: gem(32)
+                padding: gem(8) 0 gem(10) 0
+                margin-left: 0
+                border-radius: gem(12)
         nav
             display: flex
             justify-content: center
@@ -814,360 +905,9 @@ button[type='submit']
                         transition: 0.03s all ease
                         &:hover
                             color:  var(--color-white)
-                            font-weight: 800 !important
+        svg
+            position: absolute
+            top: gem(17)
+            right: gem(16)
 
 
-
-
-
-
-.mfp-bg 
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  z-index: 1042
-  overflow: hidden
-  position: fixed
-  background: #0b0b0b
-  opacity: 0.8 
-
-.mfp-wrap 
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
-  z-index: 1043
-  position: fixed
-  outline: none !important
-  -webkit-backface-visibility: hidden 
-
-.mfp-container 
-  text-align: center
-  position: absolute
-  width: 100%
-  height: 100%
-  left: 0
-  top: 0
-  padding: 0 8px
-  box-sizing: border-box 
-
-.mfp-container:before 
-  content: ''
-  display: inline-block
-  height: 100%
-  vertical-align: middle 
-
-.mfp-align-top .mfp-container:before 
-  display: none 
-
-.mfp-content 
-  position: relative
-  display: inline-block
-  vertical-align: middle
-  margin: 0 auto
-  text-align: left
-  z-index: 1045 
-
-.mfp-inline-holder .mfp-content,
-.mfp-ajax-holder .mfp-content 
-  width: 100%
-  cursor: auto 
-
-.mfp-ajax-cur 
-  cursor: progress 
-
-.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close 
-  cursor: -moz-zoom-out
-  cursor: -webkit-zoom-out
-  cursor: zoom-out 
-
-.mfp-zoom 
-  cursor: pointer
-  cursor: -webkit-zoom-in
-  cursor: -moz-zoom-in
-  cursor: zoom-in 
-
-.mfp-auto-cursor .mfp-content 
-  cursor: auto 
-
-.mfp-close,
-.mfp-arrow,
-.mfp-preloader,
-.mfp-counter 
-  -webkit-user-select: none
-  -moz-user-select: none
-  user-select: none 
-
-.mfp-loading.mfp-figure 
-  display: none 
-
-.mfp-hide 
-  display: none !important 
-
-.mfp-preloader 
-  color: #CCC
-  position: absolute
-  top: 50%
-  width: auto
-  text-align: center
-  margin-top: -0.8em
-  left: 8px
-  right: 8px
-  z-index: 1044 
-  .mfp-preloader a 
-    color: #CCC 
-    .mfp-preloader a:hover 
-      color: #FFF 
-
-.mfp-s-ready .mfp-preloader 
-  display: none 
-
-.mfp-s-error .mfp-content 
-  display: none 
-
-button.mfp-close,
-button.mfp-arrow 
-  overflow: visible
-  cursor: pointer
-  background: transparent
-  border: 0
-  -webkit-appearance: none
-  display: block
-  outline: none
-  padding: 0
-  z-index: 1046
-  box-shadow: none
-  touch-action: manipulation 
-
-button::-moz-focus-inner 
-  padding: 0
-  border: 0 
-
-.mfp-close 
-  width: 44px
-  height: 44px
-  line-height: 44px
-  position: absolute
-  right: 0
-  top: 0
-  text-decoration: none
-  text-align: center
-  opacity: 0.65
-  padding: 0 0 18px 10px
-  color: #FFF
-  font-style: normal
-  font-size: 28px
-  font-family: Arial, Baskerville, monospace 
-  .mfp-close:hover,
-  .mfp-close:focus 
-    opacity: 1 
-  .mfp-close:active 
-    top: 1px 
-
-.mfp-close-btn-in .mfp-close 
-  color: #333 
-
-.mfp-image-holder .mfp-close,
-.mfp-iframe-holder .mfp-close 
-  color: #FFF
-  right: -6px
-  text-align: right
-  padding-right: 6px
-  width: 100% 
-
-.mfp-counter 
-  position: absolute
-  top: 0
-  right: 0
-  color: #CCC
-  font-size: 12px
-  line-height: 18px
-  white-space: nowrap 
-
-.mfp-arrow 
-  position: absolute
-  opacity: 0.65
-  margin: 0
-  top: 50%
-  margin-top: -55px
-  padding: 0
-  width: 90px
-  height: 110px
-  -webkit-tap-highlight-color: transparent 
-  .mfp-arrow:active 
-    margin-top: -54px 
-  .mfp-arrow:hover,
-  .mfp-arrow:focus 
-    opacity: 1 
-  .mfp-arrow:before,
-  .mfp-arrow:after 
-    content: ''
-    display: block
-    width: 0
-    height: 0
-    position: absolute
-    left: 0
-    top: 0
-    margin-top: 35px
-    margin-left: 35px
-    border: medium inset transparent 
-  .mfp-arrow:after 
-    border-top-width: 13px
-    border-bottom-width: 13px
-    top: 8px 
-  .mfp-arrow:before 
-    border-top-width: 21px
-    border-bottom-width: 21px
-    opacity: 0.7 
-
-.mfp-arrow-left 
-  left: 0 
-  .mfp-arrow-left:after 
-    border-right: 17px solid #FFF
-    margin-left: 31px 
-  .mfp-arrow-left:before 
-    margin-left: 25px
-    border-right: 27px solid #3F3F3F 
-
-.mfp-arrow-right 
-  right: 0 
-  .mfp-arrow-right:after 
-    border-left: 17px solid #FFF
-    margin-left: 39px 
-  .mfp-arrow-right:before 
-    border-left: 27px solid #3F3F3F 
-
-.mfp-iframe-holder 
-  padding-top: 40px
-  padding-bottom: 40px 
-  .mfp-iframe-holder .mfp-content 
-    line-height: 0
-    width: 100%
-    max-width: 900px 
-  .mfp-iframe-holder .mfp-close 
-    top: -40px 
-
-.mfp-iframe-scaler 
-  width: 100%
-  height: 0
-  overflow: hidden
-  padding-top: 56.25% 
-  .mfp-iframe-scaler iframe 
-    position: absolute
-    display: block
-    top: 0
-    left: 0
-    width: 100%
-    height: 100%
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6)
-    background: #000 
-
-/* Main image in popup */
-img.mfp-img 
-  width: auto
-  max-width: 100%
-  height: auto
-  display: block
-  line-height: 0
-  box-sizing: border-box
-  padding: 40px 0 40px
-  margin: 0 auto 
-
-/* The shadow behind the image */
-.mfp-figure 
-  line-height: 0 
-  .mfp-figure:after 
-    content: ''
-    position: absolute
-    left: 0
-    top: 40px
-    bottom: 40px
-    display: block
-    right: 0
-    width: auto
-    height: auto
-    z-index: -1
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6)
-    background: #444 
-  .mfp-figure small 
-    color: #BDBDBD
-    display: block
-    font-size: 12px
-    line-height: 14px 
-  .mfp-figure figure 
-    margin: 0 
-
-.mfp-bottom-bar 
-  margin-top: -36px
-  position: absolute
-  top: 100%
-  left: 0
-  width: 100%
-  cursor: auto 
-
-.mfp-title 
-  text-align: left
-  line-height: 18px
-  color: #F3F3F3
-  word-wrap: break-word
-  padding-right: 36px 
-
-.mfp-image-holder .mfp-content 
-  max-width: 100% 
-
-.mfp-gallery .mfp-image-holder .mfp-figure 
-  cursor: pointer 
-
-@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) 
-  /**
-       * Remove all paddings around the image on small screen
-       */
-  .mfp-img-mobile .mfp-image-holder 
-    padding-left: 0
-    padding-right: 0 
-  .mfp-img-mobile img.mfp-img 
-    padding: 0 
-  .mfp-img-mobile .mfp-figure:after 
-    top: 0
-    bottom: 0 
-  .mfp-img-mobile .mfp-figure small 
-    display: inline
-    margin-left: 5px 
-  .mfp-img-mobile .mfp-bottom-bar 
-    background: rgba(0, 0, 0, 0.6)
-    bottom: 0
-    margin: 0
-    top: auto
-    padding: 3px 5px
-    position: fixed
-    box-sizing: border-box 
-    .mfp-img-mobile .mfp-bottom-bar:empty 
-      padding: 0 
-  .mfp-img-mobile .mfp-counter 
-    right: 5px
-    top: 3px 
-  .mfp-img-mobile .mfp-close 
-    top: 0
-    right: 0
-    width: 35px
-    height: 35px
-    line-height: 35px
-    background: rgba(0, 0, 0, 0.6)
-    position: fixed
-    text-align: center
-    padding: 0  
-
-@media all and (max-width: 900px) 
-  .mfp-arrow 
-    -webkit-transform: scale(0.75)
-    transform: scale(0.75) 
-  .mfp-arrow-left 
-    -webkit-transform-origin: 0
-    transform-origin: 0 
-  .mfp-arrow-right 
-    -webkit-transform-origin: 100%
-    transform-origin: 100% 
-  .mfp-container 
-    padding-left: 6px
-    padding-right: 6px  

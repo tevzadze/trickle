@@ -16,9 +16,10 @@
                             <span class="label-2">Private Sale</span>
                             <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                <path clip-rule="evenodd"
                                     d="M12.6914 17.6285C15.1822 17.0392 17.1246 15.1194 17.6928 12.6758C18.2005 10.4926 18.077 8.2143 17.3362 6.09576L17.2261 5.78103C16.411 3.44994 14.3746 1.7292 11.8977 1.27851L11.2194 1.1551C10.0829 0.948301 8.91713 0.948301 7.78061 1.1551L7.10233 1.27851C4.62544 1.7292 2.58905 3.44994 1.77388 5.78101L1.66381 6.09575C0.922963 8.21429 0.799487 10.4926 1.30719 12.6758C1.87543 15.1194 3.81781 17.0392 6.3086 17.6285C8.40189 18.1238 10.5981 18.1238 12.6914 17.6285Z"
-                                    stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                                    stroke="white" stroke-width="1.5" stroke-linecap="round"
+                                    fill="rgba(255,255,255,0)" />
                                 <path
                                     d="M7.11291 4.77777L6.94138 5.19318C6.66446 5.86382 6.59485 6.60433 6.74182 7.31619C6.96608 8.40238 7.81621 9.2413 8.89038 9.43641L8.98496 9.45359C9.32562 9.51546 9.67436 9.51546 10.015 9.45359L10.1096 9.43641C11.1838 9.2413 12.0339 8.40238 12.2582 7.31619C12.4051 6.60433 12.3355 5.86382 12.0586 5.19318L11.8871 4.77777"
                                     stroke="white" stroke-width="1.5" stroke-linecap="round" />
@@ -30,7 +31,7 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M1.33327 6.61985C1.94858 3.99673 3.99673 1.94857 6.61985 1.33327C8.51424 0.888909 10.4858 0.88891 12.3801 1.33327C15.0033 1.94857 17.0514 3.99673 17.6667 6.61986C18.1111 8.51424 18.1111 10.4858 17.6667 12.3801C17.0514 15.0033 15.0033 17.0514 12.3801 17.6667C10.4858 18.1111 8.51424 18.1111 6.61986 17.6667C3.99673 17.0514 1.94858 15.0033 1.33327 12.3802C0.888909 10.4858 0.888909 8.51424 1.33327 6.61985Z"
-                                    stroke="white" stroke-width="1.5" />
+                                    stroke="white" stroke-width="1.5" fill="rgba(255,255,255,0)" />
                                 <path d="M6 9.5L13 9.5M13 9.5L10.5 7M13 9.5L10.5 12" stroke="white" stroke-width="1.5"
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
@@ -120,7 +121,7 @@
                 </div>
             </div>
         </div>
-        <div class="access">
+        <div class="access" id="access">
             <div class="container">
                 <div class="access-main">
                     <div class="access-main-text">
@@ -130,8 +131,21 @@
                             up and inviting your friends!</p>
                         <div class="access-main-text-buttons">
                             <p class="title-h3">Join our waitlist:</p>
-                            <div class="access-main-text-buttons-element">
-                                <span class="label-2">Sign Up</span>
+                            <div class="access-main-text-buttons-form">
+                                <form action="">
+                                    <input placeholder="Enter Your Email Address" type="text">
+                                    <a id="signup" class="access-main-text-buttons-element">
+                                        <span class="label-2">Sign Up</span>
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1.33327 6.61985C1.94858 3.99673 3.99673 1.94857 6.61985 1.33327C8.51424 0.888909 10.4858 0.88891 12.3801 1.33327C15.0033 1.94857 17.0514 3.99673 17.6667 6.61986C18.1111 8.51424 18.1111 10.4858 17.6667 12.3801C17.0514 15.0033 15.0033 17.0514 12.3801 17.6667C10.4858 18.1111 8.51424 18.1111 6.61986 17.6667C3.99673 17.0514 1.94858 15.0033 1.33327 12.3802C0.888909 10.4858 0.888909 8.51424 1.33327 6.61985Z"
+                                                stroke="white" stroke-width="1.5" fill="rgba(255,255,255,0)" />
+                                            <path d="M6 9.5L13 9.5M13 9.5L10.5 7M13 9.5L10.5 12" stroke="white"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </form>
                             </div>
                         </div>
                     </div>

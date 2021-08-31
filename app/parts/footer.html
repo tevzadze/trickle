@@ -59,14 +59,13 @@
 			<div class="footer-main-copyright">
 				<p class="desc-2">© 2021 Trickle Ltd. All Rights Reserved</p>
 			</div>
-			<!-- <a class="popup-with-form" href="#test-form">Open form</a> -->
 		</div>
 	</div>
 </div>
-<div id="test-form" class="signup white-popup-block mfp-hide">
+<div id="test-form" class="signup zoom-anim-dialog mfp-hide">
 	<div class="signup-header">
 		<img src="images/logo.svg" alt="Logo">
-		<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="close-button">
 			<path d="M4.4705 11.9339C5.33917 8.23067 8.23068 5.33916 11.9339 4.4705C14.6083 3.84317 17.3917 3.84317 20.0661 4.4705C23.7693 5.33916 26.6608 8.23068 27.5295 11.9339C28.1568 14.6083 28.1568 17.3917 27.5295 20.0661C26.6608 23.7693 23.7693 26.6608 20.0661 27.5295C17.3917 28.1568 14.6083 28.1568 11.9339 27.5295C8.23068 26.6608 5.33917 23.7693 4.4705 20.0661C3.84317 17.3917 3.84317 14.6083 4.4705 11.9339Z" stroke="white" stroke-width="1.5"/>
 			<path d="M18.357 13.6429L13.6429 18.357M18.357 18.357L13.6429 13.6429" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
 		</svg>
@@ -75,10 +74,10 @@
 		<h3 class="title-h3">Sign Up</h3>
 		<form action="">
 			<input type="text" placeholder="Enter your email address">
-			<input type="text" placeholder="Enter your password">
+			<input type="password" placeholder="Enter your password">
 		</form>
 		<div class="signup-main-check">
-			<input type="radio" id="terms" name="terms"
+			<input type="checkbox" id="terms" name="terms"
 				   unchecked>
 			<label for="terms" class="desc-1">Terms and Conditions</label>
 		</div>
@@ -87,31 +86,18 @@
 		</div>
 	</div>
 </div>
-<!-- <form id="test-form" class="white-popup-block mfp-hide">
-	<h1>Form</h1>
-	<fieldset style="border:0;">
-		<p>Lightbox has an option to automatically focus on the first input. It's strongly recommended to use <code>inline</code> popup type for lightboxes with form instead of <code>ajax</code> (to keep entered data if the user accidentally refreshed the page).</p>
-		<ol>
-			<li>
-				<label for="name">Name</label>
-				<input id="name" name="name" type="text" placeholder="Name" required="">
-			</li>
-			<li>
-				<label for="email">Email</label>
-				<input id="email" name="email" type="email" placeholder="example@domain.com" required="">
-			</li>
-			<li>
-				<label for="phone">Phone</label>
-				<input id="phone" name="phone" type="tel" placeholder="Eg. +447500000000" required="">
-			</li>
-			<li>
-				<label for="textarea">Textarea</label><br>
-				<textarea id="textarea">Try to resize me to see how popup CSS-based resizing works.</textarea>
-			</li>
-		</ol>
-	</fieldset>
-</form> -->
-<div class="mobile-menu">
+<div id="mob-menu" class="mobile-menu zoom-anim-dialog mfp-hide">
+	<div class="mobile-menu-header">
+			<img src="images/logo.svg" alt="Logo">
+			<a href="#test-form" class="popup-with-move-anim access-main-text-buttons-element">
+				<span class="label-2">Sign Up</span>
+			</a>
+	</div>
+	<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="close-button">
+		<path d="M4.4705 11.9339C5.33917 8.23067 8.23068 5.33916 11.9339 4.4705C14.6083 3.84317 17.3917 3.84317 20.0661 4.4705C23.7693 5.33916 26.6608 8.23068 27.5295 11.9339C28.1568 14.6083 28.1568 17.3917 27.5295 20.0661C26.6608 23.7693 23.7693 26.6608 20.0661 27.5295C17.3917 28.1568 14.6083 28.1568 11.9339 27.5295C8.23068 26.6608 5.33917 23.7693 4.4705 20.0661C3.84317 17.3917 3.84317 14.6083 4.4705 11.9339Z" stroke="white" stroke-width="1.5"/>
+		<path d="M18.357 13.6429L13.6429 18.357M18.357 18.357L13.6429 13.6429" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+	</svg>
+	
 	<nav>
 		<ul>
 			<li>
@@ -123,7 +109,6 @@
 		</ul>
 	</nav>
 </div>
-<script src="libs/popup/jquery.magnific-popup.js"></script>
 <script src="js/app.min.js"></script>
 </body>
 

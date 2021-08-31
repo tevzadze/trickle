@@ -33,6 +33,7 @@
 		"gulp-sass-glob": "^1.1.0",
 		"gulp-stylus": "^2.7.0",
 		"jquery": "^3.6.0",
+		"page-scroll-to-id": "^1.6.8",
 		"webpack-stream": "^6.1.2"
 	},
 	"dependencies": {
