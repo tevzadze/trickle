@@ -180,9 +180,14 @@ button[type='submit']
             width: gem(694)
             height: gem(573)
             right: gem(-120)
-            img
-                width: 100%
+            background: #202039
+            overflow: hidden
+            video
+                width: 150%
                 height: auto
+                mix-blend-mode: lighten
+                margin-left: gem(-180)
+
 .decor-section
     display: flex
     height: unset
@@ -226,6 +231,17 @@ button[type='submit']
             display: flex
             flex-direction: column
             max-width: gem(480)
+            &-img
+                width: 100%
+                background: #202039
+                overflow: hidden
+                display: flex
+                justify-content: center
+                video
+                    margin-top: gem(-60)
+                    width: 200%
+                    mix-blend-mode: lighten
+
             &-text
                 display: flex
                 flex-direction: column
@@ -300,6 +316,7 @@ button[type='submit']
                     background-size: 100% 140%
                     transition: 0.3s all ease
                     cursor: pointer
+                    align-items: center
                     &:hover
                         background-position: 100% 120%
                 &-form
