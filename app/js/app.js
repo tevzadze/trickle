@@ -62,9 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	const marquee1 = document.querySelector('#marquee1');
-	const marquee2 = document.querySelector('#marquee2');
 
 	animateMarquee(marquee1, 30000);
-	animateMarquee(marquee2, 30000);
 
 })
