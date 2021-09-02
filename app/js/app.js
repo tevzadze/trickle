@@ -6,13 +6,14 @@ import "magnific-popup"
 
 // // Import vendor jQuery plugin example (not module)
 require('~/app/js/jquery.malihu.PageScroll2id.min.js')
-
+require('~/app/js/jquery.marquee.min.js')
 document.addEventListener('DOMContentLoaded', () => {
-	$("a[href*='#']").mPageScroll2id({
+	$("a[href*='#signup']").mPageScroll2id({
 		offset: 100
 	});
 	// Custom JS
 	// popup
+	let openedPopup = false
 
 	let popupDiv = $('.popup-with-move-anim')
 	popupDiv.magnificPopup({
@@ -28,41 +29,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		midClick: true,
 		removalDelay: 300,
+		callbacks: {
+			open: () => {
+				openedPopup = true
+			},
+			close: () => {
+				openedPopup = false
+			}
+		},
 		mainClass: 'my-mfp-slide-bottom'
 	});
-	let popupCloseButton = document.querySelector('.signup .close-button')
-	popupCloseButton.addEventListener('click', () => {
-		popupDiv.close();
-	})
-	//marquee
-	function animateMarquee(el, duration) {
-		const innerEl = el.querySelector('.marquee__inner');
-		const innerWidth = innerEl.offsetWidth;
-		const cloneEl = innerEl.cloneNode(true);
-		el.appendChild(cloneEl);
+	let popupCloseButton = document.querySelectorAll("a[href*='#signup']")
 
-		let start = performance.now();
-		let progress;
-		let translateX;
+	for(let i=0; i<popupCloseButton.length; i++) {
+		popupCloseButton[i].addEventListener('click', () => {
 
-		requestAnimationFrame(function step(now) {
-			progress = (now - start) / duration;
-
-			if (progress > 1) {
-				progress %= 1;
-				start = now;
+			if(openedPopup) {
+				$.magnificPopup.close();
 			}
-
-			translateX = innerWidth * progress;
-
-			innerEl.style.transform = `translate3d(-${translateX}px, -40px , 0)`;
-			cloneEl.style.transform = `translate3d(-${translateX}px, -40px , 0)`;
-			requestAnimationFrame(step);
-		});
+		})
 	}
-
-	const marquee1 = document.querySelector('#marquee1');
-
-	animateMarquee(marquee1, 30000);
+	
+	//margquee
+	$('.marquee').marquee({
+        duration: 30000,
+        gap: 0,
+        duplicated: true,
+        startVisible: true,
+        direction: 'right',
+    })
 
 })

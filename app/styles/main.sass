@@ -200,16 +200,29 @@ button[type='submit']
     span:nth-child(even)
         color: white
         text-shadow: black 0 0 2px
-.marquee 
-    overflow: hidden
-    white-space: nowrap
-    cursor: default
-    user-select: none
+.marquee
+    // display: flex
+    margin-top: gem(49)
+    height: gem(68)
     background: #F2E8FF
-    height: gem(68)
-.marquee__inner
-    display: inline-block
-    height: gem(68)
+    // align-items: center
+    // animation: marquee 10s linear infinite forwards  
+    &-item
+        display: flex
+        flex-direction: row
+        align-items: center
+        height: gem(68)
+    p
+        margin-right: gem(37)
+        font-size: gem(32)
+    p:nth-child(odd)
+        -webkit-text-stroke-width: gem(1)
+        -webkit-text-stroke-color: #202039
+    p:nth-child(even)
+        color: #202039
+.js-marquee
+    display: flex
+    align-items: center
 .info
     padding-top: gem(180)
     &-bgr
@@ -412,19 +425,19 @@ button[type='submit']
             mix-blend-mode: lighten
         img:nth-child(1)
             position: absolute
-            top: gem(102)
-            left: 0
-            width: gem(89)
+            top: gem(100)
+            left: gem(-77)
+            width: gem(166)
         img:nth-child(2)
             position: absolute
-            top: gem(224)
-            left: gem(16)
-            width: gem(242)
+            top: gem(229)
+            left: gem(19)
+            width: gem(243)
         img:nth-child(3)
             position: absolute
-            top: gem(84)
-            right: 0
-            width: gem(294)
+            top: gem(78)
+            right: gem(-109)
+            width: gem(401)
     &-bgr-mobile
         display: none
     h2, p
@@ -574,6 +587,13 @@ button[type='submit']
 .mobile-menu
     display: none
 @media all and (max-width: 1024px)
+    .marquee
+        margin-top: gem(93)
+        height: gem(60)
+        &-item
+            height: gem(60)
+        p
+            font-size: gem(24)
     .header
         padding-top: gem(14)
         width: gem(704)
@@ -612,10 +632,6 @@ button[type='submit']
             line-height: gem(32)
             position: relative
             top: gem(-7)
-    .marquee 
-        height: gem(62)
-    .marquee__inner
-        height: gem(62)
     .info
         padding-top: gem(103)
         &-bgr
@@ -689,20 +705,20 @@ button[type='submit']
         margin-top: 0
         p
             margin-bottom: gem(16)
-            max-width: gem(510)
+            max-width: gem(557)
         &-bgr
             img:nth-child(1)
-                width: gem(50)
-                top: gem(45)
-                left: gem(-6)
+                width: gem(86)
+                top: gem(50)
+                left: gem(-42)
             img:nth-child(2)
-                width: gem(128)
-                top: gem(113)
-                left: gem(5)
+                width: gem(126)
+                top: gem(116)
+                left: gem(8)
             img:nth-child(3)
-                width: gem(140)
-                top: gem(45)
-                right: gem(-48)
+                width: gem(187)
+                top: gem(46)
+                right: gem(-97)
 
     .footer
         &-main
@@ -722,6 +738,13 @@ button[type='submit']
                             width: gem(100)
                             margin-right: gem(23)
 @media all and (max-width: 480px)
+    .marquee
+        margin-top: gem(74)
+        height: gem(56)
+        &-item
+            height: gem(56)
+        p
+            font-size: gem(16)
     .header
         padding-top: gem(18)
         width: gem(337)
@@ -792,10 +815,6 @@ button[type='submit']
             line-height: gem(20)
             position: relative
             top: gem(-12)
-    .marquee 
-        height: gem(57)
-    .marquee__inner
-        height: gem(57)
     .info
         padding-top: gem(115)
         &-bgr
@@ -844,6 +863,7 @@ button[type='submit']
                             text-align: center
     .access
         margin-top: gem(116)
+        padding-bottom: gem(10)
         &-main
             flex-direction: column-reverse
             position: relative
@@ -871,7 +891,7 @@ button[type='submit']
                         input
                             height: unset
                             padding: gem(20) gem(20) gem(20) gem(26)
-                        a
+                        button
                             width: gem(52)
                             height: gem(52)
                             top: gem(5)
@@ -901,7 +921,7 @@ button[type='submit']
                     top: gem(-55)
                     width: gem(410)
     .refer
-        padding: gem(101) 0 gem(100) 0
+        padding: gem(91) 0 gem(100) 0
         p
             margin-bottom: gem(16)
             max-width: gem(366)
@@ -911,9 +931,9 @@ button[type='submit']
             img:nth-child(1)
                 top: unset
                 left: unset
-                right: 0
+                right: gem(-20)
                 bottom: gem(45)
-                width: gem(23)
+                width: gem(43)
                 transform: rotate(180deg)
             img:nth-child(2)
                 top: unset
@@ -921,9 +941,9 @@ button[type='submit']
                 left: gem(-14)
                 width: gem(75)
             img:nth-child(3)
-                top: gem(21)
-                right: gem(-5)
-                width: gem(75)
+                top: gem(12)
+                right: gem(-32)
+                width: gem(100)
         &-bgr-mobile
             display: block
             width: gem(470)
