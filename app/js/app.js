@@ -58,32 +58,31 @@ document.addEventListener('DOMContentLoaded', () => {
 		startVisible: true,
 		direction: 'right',
 	})
-
-
-
-	
+	let emailInput = document.querySelector('#submit_form input')
 	$("#submit_form").submit(function (event) { // Устанавливаем событие отправки для формы с id=form
 		event.preventDefault();
-		 var form_data = $(this).serialize(); // Собираем все данные из формы
-		 $.ajax({
-			 type: "POST", // Метод отправки
-			 url: "send.php", // Путь до php файла отправителя
-			 data: form_data,
-			 success: function (data) {
-				$(".form-answer").html('success');
-				$('.form-answer').addClass('active')
-						setTimeout(() => {
-							$('.form-answer').removeClass('active')
-						}, 3000);
-			 }, 
-			 error: function (data) {
-				$(".form-answer").html('error');
-				$('.form-answer').addClass('active')
-						setTimeout(() => {
-							$('.form-answer').removeClass('active')
-						}, 3000);
-			 }
-		 });
+			var form_data = $(this).serialize(); // Собираем все данные из формы
+			$.ajax({
+					type: "POST", // Метод отправки
+					url: "send.php", // Путь до php файла отправителя
+					data: form_data,
+					success: function (data) {
+						emailInput.value = ''
+						$(".form-answer").html('success');
+						$('.form-answer').addClass('active')
+						
+								setTimeout(() => {
+									$('.form-answer').removeClass('active')
+								}, 3000);
+					}, 
+					error: function (data) {
+						$(".form-answer").html('error');
+						$('.form-answer').addClass('active')
+								setTimeout(() => {
+									$('.form-answer').removeClass('active')
+								}, 3000);
+					}
+			});
 	 });
 })
 

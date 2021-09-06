@@ -5,6 +5,7 @@
 		$subject = "Form submission";
 		$message = "New subscribe:" . $email . "\n\n";
 		$headers = "Trickle" . $email;
-		mail($to,$subject,$message,$headers);
+			mail($to,$subject,$message,$headers);
+			// echo ($send_email) ? 'success' : 'error';
 		}
 ?>

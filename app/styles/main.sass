@@ -57,11 +57,14 @@ button[type='submit']
 .header
 	display: flex
 	position: fixed
-	width: gem(1200)
-	left: gem(120)
+	width: 100%
+	height: gem(117)
+	left: 0
 	top: 0
-	padding-top: gem(28)
+	padding: 0 gem(120) 
 	z-index: 10
+	background: linear-gradient(180deg, #202039 0%, rgba(32, 32, 57, 0) 100%)
+	backdrop-filter: blur(20px)
 	&-main
 		display: flex
 		justify-content: space-between
@@ -99,6 +102,7 @@ button[type='submit']
 	display: none
 .opening
 	margin-top: gem(91)
+	background: #202039
 	&-main
 		display: flex
 		position: relative
@@ -173,21 +177,13 @@ button[type='submit']
 						svg
 							path:last-child
 								stroke: #FE85E7
-
-		&-img
-			display: flex
-			position: relative
-			width: gem(694)
-			height: gem(573)
-			right: gem(-120)
+		video
+			width: gem(1000)
+			height: auto
+			mix-blend-mode: lighten
+			position: absolute
+			right: gem(-290)
 			background: #202039
-			overflow: hidden
-			video
-				width: 150%
-				height: auto
-				mix-blend-mode: lighten
-				margin-left: gem(-180)
-
 .decor-section
 	display: flex
 	height: unset
@@ -202,7 +198,7 @@ button[type='submit']
 		text-shadow: black 0 0 2px
 .marquee
 	// display: flex
-	margin-top: gem(49)
+	margin-top: gem(165)
 	height: gem(68)
 	background: #F2E8FF
 	// align-items: center
@@ -215,11 +211,11 @@ button[type='submit']
 	p
 		margin-right: gem(37)
 		font-size: gem(32)
-	p:nth-child(odd)
-		-webkit-text-stroke-width: gem(1)
-		-webkit-text-stroke-color: #202039
-	p:nth-child(even)
 		color: #202039
+	// p:nth-child(odd)
+	// 	-webkit-text-stroke-width: gem(1)
+	// 	-webkit-text-stroke-color: #202039
+	// p:nth-child(even)
 .js-marquee
 	display: flex
 	align-items: center
@@ -263,6 +259,7 @@ button[type='submit']
 .features
 	display: flex
 	position: relative
+	background: #202039
 	&-main
 		display: flex
 		justify-content: space-between
@@ -272,11 +269,10 @@ button[type='submit']
 			max-width: gem(480)
 			&-img
 				width: 100%
-				background: #202039
-				overflow: hidden
 				display: flex
 				justify-content: center
 				video
+					background: #202039
 					margin-top: gem(-60)
 					width: 200%
 					mix-blend-mode: lighten
@@ -368,12 +364,14 @@ button[type='submit']
 						width: gem(480)
 						.form-answer
 							position: absolute
-							bottom: gem(-50)
+							bottom: gem(-30)
 							opacity: 0
 							transform: translateY(gem(-10))
-							text-transform: uppercase
+							text-transform: lowercase
 							transition: all 0.3s ease
 							padding-left: gem(8)
+							font-size: gem(16)
+							line-height: gem(20)
 							&.active
 								opacity: 1
 								transform: translateY(0)
@@ -607,9 +605,8 @@ button[type='submit']
 		p
 			font-size: gem(24)
 	.header
-		padding-top: gem(14)
-		width: gem(704)
-		left: gem(32)
+		padding: 0 gem(32)
+		height: gem(117)
 	.opening
 		margin-top: gem(27)
 		&-main
@@ -617,15 +614,14 @@ button[type='submit']
 			align-items: center
 			width: 100%
 			padding: 0 gem(32)
-			&-img
+			video
+				width: 130%
+				margin-left: gem(20)
+				top: gem(30)
 				right: unset
-				width: gem(452)
-				video
-					width: 180%
-					margin-left: gem(-170)
 			&-text
 				max-width: gem(613)
-				margin-top: gem(-16)
+				margin-top: gem(557)
 				br
 					display: none
 				h1
@@ -758,12 +754,11 @@ button[type='submit']
 		p
 			font-size: gem(16)
 	.header
-		padding-top: gem(18)
-		width: gem(337)
+		height: gem(67)
+		padding: 0 gem(20)
 		z-index: 20
-		left: gem(16)
 		&-main
-			width: gem(337)
+			width: 100%
 			&-logo
 				width: gem(140)
 			&-menu
@@ -783,26 +778,20 @@ button[type='submit']
 		width: gem(32)
 		height: gem(32)
 		cursor: pointer
-		position: fixed
-		top: gem(18)
-		right: gem(17)
-		z-index: 1000
+		margin-left: gem(12)
 	.opening
 		margin-top: gem(27)
 		&-main
 			padding: 0
-			&-img
-				margin-top: gem(-56)
-				width: gem(382)
-				z-index: 4
-				video
-					width: 180%
-					margin-left: gem(-144)
+			video
+				width: 200%
+				top: gem(10)
+				margin-left: gem(20)
 			&-text
 				align-items: center
 				width: 100%
 				max-width: unset
-				margin-top: gem(-84)
+				margin-top: gem(433)
 				z-index: 5
 				h1, p
 					max-width: gem(344)
