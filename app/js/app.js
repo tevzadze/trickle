@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			var form_data = $(this).serialize(); // Собираем все данные из формы
 			$.ajax({
 					type: "POST", // Метод отправки
-					url: "send.php", // Путь до php файла отправителя
+					url: "~/app/js/send.php", // Путь до php файла отправителя
 					data: form_data,
 					success: function (data) {
 						emailInput.value = ''

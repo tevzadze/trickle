@@ -1,6 +1,6 @@
 <?php 
 	if(isset($_POST['email'])){
-		$to = "pawtod22@gmail.com"; // this is your Email address
+		$to = "admin@trickle.cloud"; // this is your Email address
 		$email = $_POST['email']; // this is input
 		$subject = "Form submission";
 		$message = "New subscribe:" . $email . "\n\n";
